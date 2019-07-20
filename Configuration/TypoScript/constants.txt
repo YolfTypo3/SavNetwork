@@ -1,0 +1,15 @@
+
+plugin.tx_savnetwork {
+    view {
+        # cat=plugin.tx_savnetwork/file; type=string; label=Path to template root (FE)
+        templateRootPath = EXT:sav_network/Resources/Private/Templates/
+        # cat=plugin.tx_savnetwork/file; type=string; label=Path to template partials (FE)
+        partialRootPath = EXT:sav_network/Resources/Private/Partials/
+        # cat=plugin.tx_savnetwork/file; type=string; label=Path to template layouts (FE)
+        layoutRootPath = EXT:sav_network/Resources/Private/Layouts/
+    }
+    persistence {
+        # cat=plugin.tx_savnetwork//a; type=string; label=Default storage PID
+        storagePid =
+    }
+}

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+
+<xliff version="1.0">
+    <file source-language="en" datatype="plaintext" original="messages" date="2019-07-20T06:58:55Z" product-name="sav_network">
+        <header/>
+        <body>
+            <trans-unit id="tx_savnetwork_domain_model_network" xml:space="preserve">
+                <source>Network</source>
+            </trans-unit>
+            <trans-unit id="tx_savnetwork_domain_model_network.name" xml:space="preserve">
+                <source>Name</source>
+            </trans-unit>
+            <trans-unit id="tx_savnetwork_domain_model_network.options" xml:space="preserve">
+                <source>Options</source>
+            </trans-unit>
+            <trans-unit id="tx_savnetwork_domain_model_network.nodes" xml:space="preserve">
+                <source>Nodes</source>
+            </trans-unit>
+            <trans-unit id="tx_savnetwork_domain_model_node" xml:space="preserve">
+                <source>Node</source>
+            </trans-unit>
+            <trans-unit id="tx_savnetwork_domain_model_node.name" xml:space="preserve">
+                <source>Name</source>
+            </trans-unit>
+            <trans-unit id="tx_savnetwork_domain_model_node.options" xml:space="preserve">
+                <source>Options</source>
+            </trans-unit>
+            <trans-unit id="tx_savnetwork_domain_model_node.image" xml:space="preserve">
+                <source>Image</source>
+            </trans-unit>
+            <trans-unit id="tx_savnetwork_domain_model_node.link" xml:space="preserve">
+                <source>Link</source>
+            </trans-unit>
+            <trans-unit id="tx_savnetwork_domain_model_node.edges" xml:space="preserve">
+                <source>Edges</source>
+            </trans-unit>
+            <trans-unit id="tx_savnetwork_domain_model_edge" xml:space="preserve">
+                <source>Edge</source>
+            </trans-unit>
+            <trans-unit id="tx_savnetwork_domain_model_edge.from_node" xml:space="preserve">
+                <source>From</source>
+            </trans-unit>
+            <trans-unit id="tx_savnetwork_domain_model_edge.from_node.I.0" xml:space="preserve">
+                <source></source>
+            </trans-unit>
+            <trans-unit id="tx_savnetwork_domain_model_edge.to_node" xml:space="preserve">
+                <source>To</source>
+            </trans-unit>
+            <trans-unit id="tx_savnetwork_domain_model_edge.to_node.I.0" xml:space="preserve">
+                <source></source>
+            </trans-unit>
+            <trans-unit id="tx_savnetwork_domain_model_edge.options" xml:space="preserve">
+                <source>Options</source>
+            </trans-unit>
+            <trans-unit id="tt_content.list_type_pi1" xml:space="preserve">
+                <source>SAV Network</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>
+

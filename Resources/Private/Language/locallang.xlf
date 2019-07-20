@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2015-11-28T21:48:54Z" product-name="sav_network">
+		<header/>
+		<body>
+			<trans-unit id="extensionFlexform.sheetTitle.sDEF" xml:space="preserve">
+				<source>General</source>
+			</trans-unit>			<trans-unit id="extensionFlexform.network" xml:space="preserve">
+				<source>Select a network.</source>
+			</trans-unit>
+			<trans-unit id="error.unknownNetwork" xml:space="preserve">
+				<source>Unknown network: Please choose a network in the plugin options.</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

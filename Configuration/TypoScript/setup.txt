@@ -1,0 +1,12 @@
+
+
+plugin.tx_savnetwork {
+    view {
+        templateRootPath = {$plugin.tx_savnetwork.view.templateRootPath}
+        partialRootPath = {$plugin.tx_savnetwork.view.partialRootPath}
+        layoutRootPath = {$plugin.tx_savnetwork.view.layoutRootPath}
+    }
+    persistence {
+        storagePid = {$plugin.tx_savnetwork.persistence.storagePid}
+    }
+}
