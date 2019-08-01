@@ -3,11 +3,11 @@
 .. _UsersManual:
 
 ============
-Users manual
+Users Manual
 ============
 
-Creating a newtwork
-===================
+Creating a New Network
+======================
 
 Download the extension and install it.
 
@@ -61,7 +61,7 @@ Do the same for the edge between "Node 1" and "Node 3" and go to the frontend.
 
 Click on a node and move the mouse to enjoy the effect of vis.js library.
 
-Adding images or links to nodes
+Adding Images or Links to Nodes
 ===============================
 
 Adding an image or a link to one node can be easily done using the wizards.
@@ -76,7 +76,7 @@ Going to the frontend will now display the network where "Node 1" is the TYPO3 l
 
 .. figure:: ../Images/Node1WithTypo3ImageAndLinkInFrontend.png
 
-Adding options
+Adding Options
 ==============
 
 As you may have noticed, there is an "Options field" in networks, nodes and edges.

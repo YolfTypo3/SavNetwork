@@ -6,7 +6,7 @@
 Introduction
 ============
 
-What does it do?
+What Does it Do?
 ================
 
 The SAV Network extension implements a part of the `vis.js <http://visjs.org/>`_ library to display networks.
