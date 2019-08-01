@@ -20,6 +20,8 @@ use TYPO3\CMS\Core\Page\PageRenderer;
 use TYPO3\CMS\Extbase\Configuration\FrontendConfigurationManager;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
+use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
+use YolfTypo3\SavNetwork\Domain\Repository\NetworkRepository;
 
 /**
  * Default Controller
@@ -44,10 +46,7 @@ class DefaultController extends ActionController
     /**
      * networkRepository
      *
-     * @TYPO3\CMS\Extbase\Annotation\Inject
-     * @var \YolfTypo3\SavNetwork\Domain\Repository\NetworkRepository
-     * @extensionScannerIgnoreLine
-     * @inject
+     * @var NetworkRepository
      */
     protected $networkRepository;
 
@@ -57,6 +56,16 @@ class DefaultController extends ActionController
      * @var string
      */
     protected $networkName;
+
+    /**
+     * Injects the network repository.
+     *
+     * @param NetworkRepository $networkRepository
+     */
+    public function injectNetworkRepository(NetworkRepository $networkRepository)
+    {
+        $this->networkRepository = $networkRepository;
+    }
 
     /**
      * Initializes the controller before invoking an action method.
@@ -124,7 +133,7 @@ class DefaultController extends ActionController
             // Sets the link if it exists
             if (! empty($node->getLink())) {
                 $linkOptions[] = $this->formatConfiguration('id', $node->getUid());
-                $linkOptions[] = $this->formatConfiguration('link', $this->configurationManager->getContentObject()
+                $linkOptions[] = $this->formatConfiguration('link', $this->getContentObjectRenderer()
                     ->typoLink_URL([
                     'parameter' => $node->getLink()
                 ]));
@@ -265,6 +274,19 @@ class DefaultController extends ActionController
     public function showAction()
     {
         $this->view->assign('networkName', $this->networkName);
+    }
+
+    /**
+     * Gets the content object renderer
+     *
+     * @return ContentObjectRenderer
+     */
+    public function getContentObjectRenderer()
+    {
+        // @extensionScannerIgnoreLine
+        $contentObject = $this->configurationManager->getContentObject();
+
+        return $contentObject;
     }
 
     /**
