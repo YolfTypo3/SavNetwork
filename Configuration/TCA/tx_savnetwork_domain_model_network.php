@@ -93,7 +93,7 @@ return [
             'label'  => 'LLL:EXT:sav_network/Resources/Private/Language/locallang_db.xlf:tx_savnetwork_domain_model_network.nodes',
             'config' => [
                 'type' => 'inline',
-                'foreign_table' =>  'tx_savnetwork_domain_model_node',
+                'foreign_table' => 'tx_savnetwork_domain_model_node',
                 'foreign_sortby' => 'sorting',
                 'size' => 1,
                 'minitems' => 0,

@@ -117,7 +117,7 @@ return [
             'label'  => 'LLL:EXT:sav_network/Resources/Private/Language/locallang_db.xlf:tx_savnetwork_domain_model_node.edges',
             'config' => [
                 'type' => 'inline',
-                'foreign_table' =>  'tx_savnetwork_domain_model_edge',
+                'foreign_table' => 'tx_savnetwork_domain_model_edge',
                 'foreign_sortby' => 'sorting',
                 'size' => 1,
                 'minitems' => 0,

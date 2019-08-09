@@ -1,0 +1,19 @@
+<?php
+
+mod.wizards {
+    newContentElement.wizardItems {
+        plugins {
+            elements {
+                sav_network {
+                    iconIdentifier = ext-savnetwork-wizard
+                    title = SAV Network
+                    description = Extension which displays a network by means of vis.js library
+                    tt_content_defValues {
+                        CType = list
+                        list_type = sav_network
+                    }
+                }
+            }
+        }
+    }
+}
