@@ -24,14 +24,14 @@ class Edge extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * The fromNode variable.
      *
-     * @var \YolfTypo3\SavNetwork\Domain\Model\Node    
+     * @var \YolfTypo3\SavNetwork\Domain\Model\Node
      */
     protected $fromNode;
 
     /**
      * The toNode variable.
      *
-     * @var \YolfTypo3\SavNetwork\Domain\Model\Node    
+     * @var \YolfTypo3\SavNetwork\Domain\Model\Node
      */
     protected $toNode;
 
@@ -52,7 +52,7 @@ class Edge extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Getter for fromNode.
      *
-     * @return \YolfTypo3\SavNetwork\Domain\Model\Node    
+     * @return \YolfTypo3\SavNetwork\Domain\Model\Node
      */
     public function getFromNode()
     {
@@ -68,12 +68,12 @@ class Edge extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     public function setFromNode($fromNode)
     {
         $this->fromNode = $fromNode;
-    }    
+    }
 
     /**
      * Getter for toNode.
      *
-     * @return \YolfTypo3\SavNetwork\Domain\Model\Node    
+     * @return \YolfTypo3\SavNetwork\Domain\Model\Node
      */
     public function getToNode()
     {
@@ -89,7 +89,7 @@ class Edge extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     public function setToNode($toNode)
     {
         $this->toNode = $toNode;
-    }    
+    }
 
     /**
      * Getter for options.
@@ -110,7 +110,7 @@ class Edge extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     public function setOptions($options)
     {
         $this->options = $options;
-    }    
+    }
 
 }
 ?>

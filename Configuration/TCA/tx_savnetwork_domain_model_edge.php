@@ -47,7 +47,7 @@ return [
                     ['', 0],
                 ],
                 'foreign_table' => 'tx_savnetwork_domain_model_edge',
-                'foreign_table_where' => 'AND tx_savnetwork_domain_model_edge.uid=###CURRENT_PID### AND tx_savnetwork_domain_model_edge.sys_language_uid IN (-1,0)', 
+                'foreign_table_where' => 'AND tx_savnetwork_domain_model_edge.uid=###CURRENT_PID### AND tx_savnetwork_domain_model_edge.sys_language_uid IN (-1,0)',
             ]
         ],
         'l18n_diffsource' => [
@@ -75,7 +75,7 @@ return [
             'exclude' => 1,
             'label'  => 'LLL:EXT:sav_network/Resources/Private/Language/locallang_db.xlf:tx_savnetwork_domain_model_edge.from_node',
             'config' => [
-                'type' => 'select',  
+                'type' => 'select',
                 'renderType' => 'selectSingle',
                 'items' => [
                     ['LLL:EXT:sav_network/Resources/Private/Language/locallang_db.xlf:tx_savnetwork_domain_model_edge.from_node.I.0', 0],
@@ -91,7 +91,7 @@ return [
             'exclude' => 1,
             'label'  => 'LLL:EXT:sav_network/Resources/Private/Language/locallang_db.xlf:tx_savnetwork_domain_model_edge.to_node',
             'config' => [
-                'type' => 'select',  
+                'type' => 'select',
                 'renderType' => 'selectSingle',
                 'items' => [
                     ['LLL:EXT:sav_network/Resources/Private/Language/locallang_db.xlf:tx_savnetwork_domain_model_edge.to_node.I.0', 0],

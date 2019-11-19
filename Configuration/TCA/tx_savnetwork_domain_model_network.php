@@ -46,7 +46,7 @@ return [
                     ['', 0],
                 ],
                 'foreign_table' => 'tx_savnetwork_domain_model_network',
-                'foreign_table_where' => 'AND tx_savnetwork_domain_model_network.uid=###CURRENT_PID### AND tx_savnetwork_domain_model_network.sys_language_uid IN (-1,0)', 
+                'foreign_table_where' => 'AND tx_savnetwork_domain_model_network.uid=###CURRENT_PID### AND tx_savnetwork_domain_model_network.sys_language_uid IN (-1,0)',
             ]
         ],
         'l18n_diffsource' => [

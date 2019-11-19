@@ -84,7 +84,7 @@ class Node extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     public function setName($name)
     {
         $this->name = $name;
-    }    
+    }
 
     /**
      * Getter for options.
@@ -105,7 +105,7 @@ class Node extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     public function setOptions($options)
     {
         $this->options = $options;
-    }    
+    }
 
     /**
      * Getter for image.
@@ -126,7 +126,7 @@ class Node extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     public function setImage($image)
     {
         $this->image = $this->updateFileStorage($this->image, $image);
-    }    
+    }
 
     /**
      * Getter for link.
@@ -147,7 +147,7 @@ class Node extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     public function setLink($link)
     {
         $this->link = $link;
-    }    
+    }
 
     /**
      * Getter for edges.
@@ -169,11 +169,11 @@ class Node extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         $this->edges = $edges;
         $this->edges->_memorizeCleanState();
-    }    
+    }
 
     /**
      * Adds a edges
-     * 
+     *
      * @param \YolfTypo3\SavNetwork\Domain\Model\Edge $edges
      * @return void
      */
@@ -184,7 +184,7 @@ class Node extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 
     /**
      * Removes a edges
-     * 
+     *
      * @param \YolfTypo3\SavNetwork\Domain\Model\Edge $edges
      * @return void
      */

@@ -69,7 +69,7 @@ class Network extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     public function setName($name)
     {
         $this->name = $name;
-    }    
+    }
 
     /**
      * Getter for options.
@@ -90,7 +90,7 @@ class Network extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     public function setOptions($options)
     {
         $this->options = $options;
-    }    
+    }
 
     /**
      * Getter for nodes.
@@ -112,11 +112,11 @@ class Network extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         $this->nodes = $nodes;
         $this->nodes->_memorizeCleanState();
-    }    
+    }
 
     /**
      * Adds a nodes
-     * 
+     *
      * @param \YolfTypo3\SavNetwork\Domain\Model\Node $nodes
      * @return void
      */
@@ -127,7 +127,7 @@ class Network extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 
     /**
      * Removes a nodes
-     * 
+     *
      * @param \YolfTypo3\SavNetwork\Domain\Model\Node $nodes
      * @return void
      */
