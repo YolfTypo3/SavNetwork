@@ -14,7 +14,7 @@ The SAV Network extension implements a part of the `vis.js <http://visjs.org/>`_
 Screenshots
 ===========
 
-Many Network examples are available in `http://visjs.org/network_examples.html <http://visjs.org/network_examples.html>`_.
+Many Network examples are available in `https://visjs.github.io/vis-network/examples <https://visjs.github.io/vis-network/examples>`_.
 
 
 
