@@ -1,5 +1,14 @@
 <?php
 
+defined('TYPO3_MODE') or die();
+
+if (version_compare(\YolfTypo3\SavNetwork\Controller\DefaultController::getTypo3Version(), '10.0', '<')) {
+    $interface = [
+    	'showRecordFieldList' => 'hidden,name,options,nodes'
+    ];
+} else {
+    $interface = [];
+}
 return [
     'ctrl' => [
         'title' => 'LLL:EXT:sav_network/Resources/Private/Language/locallang_db.xlf:tx_savnetwork_domain_model_network',
@@ -10,16 +19,14 @@ return [
         'languageField' => 'sys_language_uid',
         'transOrigPointerField' => 'l18n_parent',
         'transOrigDiffSourceField' => 'l18n_diffsource',
-        'default_sortby' => 'ORDER BY tx_savnetwork_domain_model_network.crdate ',
+        'default_sortby' => 'crdate',
         'delete' => 'deleted',
         'enablecolumns' => [
             'disabled' => 'hidden',
         ],
         'iconfile' => 'EXT:sav_network/Resources/Public/Icons/icon_tx_savnetwork_domain_model_network.gif',
     ],
-    'interface' => [
-        'showRecordFieldList' => 'hidden,name,options,nodes'
-    ],
+    'interface' => $interface,
     'columns' => [
         'sys_language_uid' => [
             'exclude' => 1,
@@ -37,7 +44,7 @@ return [
         ],
         'l18n_parent' => [
             'displayCond' => 'FIELD:sys_language_uid:>:0',
-            'exclude' => 1,
+            'exclude' => (version_compare(\YolfTypo3\SavNetwork\Controller\DefaultController::getTypo3Version(), '10.0', '<') ? 1 : null),
             'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.l18n_parent',
             'config' => [
                 'type' => 'select',

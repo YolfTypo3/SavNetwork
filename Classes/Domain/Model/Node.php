@@ -152,7 +152,7 @@ class Node extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Getter for edges.
      *
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\YolfTypo3\SavNetwork\Domain\Model\Edge>
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
      */
     public function getEdges()
     {
@@ -162,7 +162,7 @@ class Node extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Setter for edges.
      *
-     * @param  \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\YolfTypo3\SavNetwork\Domain\Model\Edge> $edges
+     * @param  \TYPO3\CMS\Extbase\Persistence\ObjectStorage $edges
      * @return void
      */
     public function setEdges($edges)

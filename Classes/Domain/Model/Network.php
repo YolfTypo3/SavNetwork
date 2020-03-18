@@ -95,7 +95,7 @@ class Network extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Getter for nodes.
      *
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\YolfTypo3\SavNetwork\Domain\Model\Node>
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
      */
     public function getNodes()
     {
@@ -105,7 +105,7 @@ class Network extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Setter for nodes.
      *
-     * @param  \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\YolfTypo3\SavNetwork\Domain\Model\Node> $nodes
+     * @param  \TYPO3\CMS\Extbase\Persistence\ObjectStorage $nodes
      * @return void
      */
     public function setNodes($nodes)
