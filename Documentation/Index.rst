@@ -50,6 +50,6 @@ Table of Contents
    :glob:
   
    Introduction/Index
-   UserManual/Index
+   UsersManual/Index
    Administration/Index
    Changelog/Index
