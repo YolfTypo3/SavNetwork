@@ -136,5 +136,3 @@ class Network extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
         $this->nodes->detach($nodes);
     }
 }
-?>
-

@@ -2,7 +2,8 @@
 
 defined('TYPO3_MODE') or die();
 
-if (version_compare(\YolfTypo3\SavNetwork\Controller\DefaultController::getTypo3Version(), '10.0', '<')) {
+$typo3Version = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Information\Typo3Version::class);
+if (version_compare($typo3Version->getVersion(), '10.0', '<')) {
     $interface = [
     	'showRecordFieldList' => 'hidden,from_node,to_node,options'
     ];
@@ -18,8 +19,8 @@ return [
         'crdate' => 'crdate',
         'cruser_id' => 'cruser_id',
         'languageField' => 'sys_language_uid',
-        'transOrigPointerField' => 'l18n_parent',
-        'transOrigDiffSourceField' => 'l18n_diffsource',
+        'transOrigPointerField' => 'l10n_parent',
+        'transOrigDiffSourceField' => 'l10n_diffsource',
         'default_sortby' => 'crdate',
         'delete' => 'deleted',
         'enablecolumns' => [
@@ -30,41 +31,51 @@ return [
     'interface' => $interface,
     'columns' => [
         'sys_language_uid' => [
-            'exclude' => 1,
-            'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.language',
-            'config' => [
+            'exclude' => true,
+            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.language',
+            'config' => version_compare(\TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Information\Typo3Version::class)->getVersion(), '11.0', '<') ?
+            [
                 'type' => 'select',
-                'renderType' => 'selectSingleBox',
+                'renderType' => 'selectSingle',
                 'foreign_table' => 'sys_language',
-                'foreign_table_where' => 'ORDER BY sys_language.title',
                 'items' => [
-                    ['LLL:EXT:lang/locallang_general.xlf:LGL.allLanguages', -1],
-                    ['LLL:EXT:lang/locallang_general.xlf:LGL.default_value', 0]
-                ]
-            ]
+                    ['LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.allLanguages', -1],
+                    ['LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.default_value', 0]
+                ],
+                'default' => 0,
+                'fieldWizard' => [
+                    'selectIcons' => [
+                        'disabled' => false,
+                    ],
+                ],
+            ] :
+            [
+          		'type' => 'language'
+            ],
         ],
-        'l18n_parent' => [
+        'l10n_parent' => [
             'displayCond' => 'FIELD:sys_language_uid:>:0',
-            'exclude' => (version_compare(\YolfTypo3\SavNetwork\Controller\DefaultController::getTypo3Version(), '10.0', '<') ? 1 : null),
-            'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.l18n_parent',
+            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.l18n_parent',
             'config' => [
                 'type' => 'select',
-                'renderType' => 'selectSingleBox',
+                'renderType' => 'selectSingle',
                 'items' => [
-                    ['', 0],
+                    ['', 0]
                 ],
-                'foreign_table' => 'tx_savnetwork_domain_model_edge',
-                'foreign_table_where' => 'AND tx_savnetwork_domain_model_edge.uid=###CURRENT_PID### AND tx_savnetwork_domain_model_edge.sys_language_uid IN (-1,0)',
+                'foreign_table' => 'sys_file_collection',
+                'foreign_table_where' => 'AND sys_file_collection.pid=###CURRENT_PID### AND sys_file_collection.sys_language_uid IN (-1,0)',
+            'default' => 0,
             ]
         ],
-        'l18n_diffsource' => [
-           'config'=> [
-                'type'=>'passthrough'
-                ]
+        'l10n_diffsource' => [
+            'config' => [
+                'type' => 'passthrough',
+                'default' => ''
+            ]
         ],
         't3ver_label' => [
             'displayCond' => 'FIELD:t3ver_label:REQ:true',
-            'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.versionLabel',
+            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.versionLabel',
             'config' => [
                 'type'=>'none',
                 'cols' => 27
@@ -72,7 +83,7 @@ return [
         ],
         'hidden' => [
             'exclude' => 1,
-            'label'  => 'LLL:EXT:lang/locallang_general.xlf:LGL.hidden',
+            'label'  => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf.xlf:LGL.hidden',
             'config' => [
                 'type'  => 'check',
                 'default' => 0,
@@ -130,4 +141,3 @@ return [
     ],
 ];
 
-?>

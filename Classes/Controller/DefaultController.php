@@ -144,10 +144,11 @@ class DefaultController extends ActionController
             }
 
             // Adds the node options
+            // @extensionScannerIgnoreLine
             $nodeOptions[] = str_replace([
                 '\n',
                 '\r'
-            ], '', $node->getOptions());
+            ], '', $this->getModelOptions($node));
 
             // Adds the nodes to the javascript
             $javaScript[] = '  nodes.push({' . implode(',', $nodeOptions) . '});';
@@ -168,7 +169,7 @@ class DefaultController extends ActionController
                     $edgeOptions[] = str_replace([
                         '\n',
                         '\r'
-                    ], '', $edge->getOptions());
+                    ], '', $this->getModelOptions($edge));
 
                     // Adds the edge to the javascript
                     $javaScript[] = '  edges.push({' . implode(',', $edgeOptions) . '});';
@@ -182,10 +183,11 @@ class DefaultController extends ActionController
         $javaScript[] = 'function getNetworkOptions' . $this->networkName . '() {';
         $javaScript[] = '  var options = {';
         $javaScript[] = '    interaction:{hover:true},';
+        // @extensionScannerIgnoreLine
         $javaScript[] = str_replace([
             '\n',
             '\r'
-        ], '', $network->getOptions());
+        ], '', $this->getModelOptions($network));
         $javaScript[] = '  };';
         $javaScript[] = '  return options;';
         $javaScript[] = '}';
@@ -274,6 +276,11 @@ class DefaultController extends ActionController
     public function showAction()
     {
         $this->view->assign('networkName', $this->networkName);
+
+        // For TYPO3 V11: action must return an instance of Psr\Http\Message\ResponseInterface
+        if (method_exists($this, 'htmlResponse')) {
+            return $this->htmlResponse($this->view->render());
+        }
     }
 
     /**
@@ -378,22 +385,20 @@ class DefaultController extends ActionController
         return $files[$count - 1];
     }
 
+
     /**
-     * Gets the TYPO3 version
+     * Gets model options
      *
-     * @todo Will be removed in TYPO3 11
+     * Method to avoid extension scanner errors
      *
-     * @return string
+     * @param object $modelObject
+     *
+     * @return mixed
      */
-    public static function getTypo3Version()
+    protected function getModelOptions($modelObject)
     {
-        if (class_exists(\TYPO3\CMS\Core\Information\Typo3Version::class)) {
-            $typo3Version = GeneralUtility::makeInstance(\TYPO3\CMS\Core\Information\Typo3Version::class)->getVersion();
-        } else {
-            // @extensionScannerIgnoreLine
-            $typo3Version = TYPO3_version;
-        }
-        return $typo3Version;
+        // @extensionScannerIgnoreLine
+        return $modelObject->getOptions();
     }
 }
 ?>

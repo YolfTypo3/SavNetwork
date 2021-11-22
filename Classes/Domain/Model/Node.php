@@ -193,5 +193,3 @@ class Node extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
         $this->edges->detach($edges);
     }
 }
-?>
-

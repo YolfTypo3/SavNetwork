@@ -113,5 +113,3 @@ class Edge extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
 }
-?>
-
